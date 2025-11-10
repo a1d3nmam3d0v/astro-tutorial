@@ -1,4 +1,7 @@
 ---
+// import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = 'About Me';
@@ -41,9 +44,9 @@ const textCase = 'uppercase';
     </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+    <!-- <Navigation /> -->
+    <Header />
+
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -57,6 +60,7 @@ const textCase = 'uppercase';
     </p>
 
     <p>Here are a few facts about me:</p>
+
     <ul>
       <li>My name is {identity.firstName}.</li>
       <li>I live in the {identity.country} and I am a {identity.occupation}.</li>
@@ -68,7 +72,9 @@ const textCase = 'uppercase';
         )
       }
     </ul>
+
     <p>My skills are:</p>
+
     <ul>
       {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
@@ -76,5 +82,11 @@ const textCase = 'uppercase';
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+    <Footer />
+
+    <script>
+      import '../scripts/menu.js';
+    </script>
   </body>
 </html>
